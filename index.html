@@ -133,37 +133,6 @@
         .photo-showcase:hover img {
             transform: scale(1.05);
         }
-
-        /* Botão de Idioma */
-        .language-btn {
-            position: fixed;
-            top: 1rem;
-            right: 1rem;
-            z-index: 100;
-            background: white;
-            border: 2px solid #ff6347;
-            color: #ff6347;
-            padding: 0.75rem 1.5rem;
-            border-radius: 2rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 99, 71, 0.2);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .language-btn:hover {
-            background: #ff6347;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255, 99, 71, 0.4);
-        }
-
-        .language-btn i {
-            font-size: 1.2rem;
-        }
         
         /* RESPONSIVIDADE MELHORADA */
         @media (max-width: 768px) {
@@ -174,13 +143,8 @@
             .hero-section {
                 min-height: 100vh;
             }
-
-            .language-btn {
-                padding: 0.6rem 1rem;
-                font-size: 0.9rem;
-            }
             
-            /* Seção Quem Somos */
+            /* Cards lado a lado em mobile - Seção Quem Somos */
             .mobile-grid-2 {
                 display: grid !important;
                 grid-template-columns: repeat(1, 1fr) !important;
@@ -188,11 +152,11 @@
             }
             
             .mobile-grid-2 .card-hover {
-                padding: 1.59rem !important;
+                padding: 1.5rem !important;
             }
             
             .mobile-grid-2 h3 {
-                font-size: 2.25rem !important;
+                font-size: 1.25rem !important;
             }
             
             .mobile-grid-2 p {
@@ -201,12 +165,12 @@
             }
             
             .mobile-grid-2 img {
-                max-width: 300px !important;
+                max-width:  400px !important;
                 height: auto !important;
             }
             
             .mobile-grid-2 .text-2xl {
-                font-size: 2rem !important;
+                font-size: 1rem !important;
             }
             
             /* Ambiente cards lado a lado */
@@ -307,7 +271,7 @@
             }
             
             .mobile-grid-2 img {
-                max-width: 410px !important;
+                max-width: 90px !important;
             }
             
             .ambiente-grid .photo-showcase {
@@ -325,11 +289,6 @@
             .stats-mobile .text-4xl {
                 font-size: 1.75rem !important;
             }
-
-            .language-btn {
-                padding: 0.5rem 0.8rem;
-                font-size: 0.8rem;
-            }
         }
     </style>
 </head>
@@ -337,30 +296,24 @@
     <!-- Bandeira de Moçambique -->
     <div class="fixed top-4 left-4 z-50 text-3xl">🇲🇿</div>
     
-    <!-- Botão de Idioma -->
-    <button class="language-btn" onclick="toggleLanguage()">
-        <i class="fas fa-language"></i>
-        <span id="lang-text">EN</span>
-    </button>
-    
     <!-- Seção Hero -->
     <section class="hero-section relative">
         <div class="container mx-auto px-4 h-screen flex items-center justify-center relative z-10">
             <div class="text-center">
                 <h1 class="brand-title mb-6 wave">Pintos Beach Bar</h1>
-                <p class="text-2xl md:text-3xl text-white font-light mb-4 drop-shadow-lg" style="text-shadow: 2px 2px 5px rgba(0,0,0,0.7);" data-pt="Onde o sabor encontra o paraíso" data-en="Where flavor meets paradise">
+                <p class="text-2xl md:text-3xl text-white font-light mb-4 drop-shadow-lg" style="text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">
                     Onde o sabor encontra o paraíso
                 </p>
-                <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto" style="color: whitesmoke !important; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);" data-pt="Experimente a autêntica culinária moçambicana em um ambiente tropical único, com vista para o mar e o melhor do verão africano" data-en="Experience authentic Mozambican cuisine in a unique tropical setting, overlooking the sea and the best of African summer">
+                <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto" style="color: whitesmoke !important; text-shadow: 2px 2px 5px rgba(0,0,0,0.7);">
                     Experimente a autêntica culinária moçambicana em um ambiente tropical único, 
                     com vista para o mar e o melhor do verão africano
                 </p>
                 <div class="space-y-4 md:space-y-0 md:space-x-4 md:flex md:justify-center">
                     <button onclick="scrollToSection('about')" class="cta-button text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg block w-full md:w-auto mb-4 md:mb-0">
-                        <i class="fas fa-compass mr-2"></i><span data-pt="Conheça Nossa História" data-en="Discover Our Story">Conheça Nossa História</span>
+                        <i class="fas fa-compass mr-2"></i>Conheça Nossa História
                     </button>
                     <button onclick="goToMenu()" class="bg-white text-orange-500 font-bold py-4 px-8 rounded-full text-lg shadow-lg hover:bg-orange-50 transition-all duration-300 block w-full md:w-auto">
-                        <i class="fas fa-utensils mr-2"></i><span data-pt="Ver Cardápio" data-en="View Menu">Ver Cardápio</span>
+                        <i class="fas fa-utensils mr-2"></i>Ver Cardápio
                     </button>
                 </div>
             </div>
@@ -372,7 +325,7 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                    <span data-pt="Nosso" data-en="Our">Nosso</span> <span class="text-orange-500" data-pt="Paraíso" data-en="Paradise">Paraíso</span>
+                    Nosso <span class="text-orange-500">Paraíso</span>
                 </h2>
             </div>
         
@@ -394,23 +347,23 @@
         <div class="container mx-auto px-4 relative z-10">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                    <span class="text-orange-500" data-pt="Quem" data-en="Who">Quem</span> <span data-pt="Somos" data-en="We Are">Somos</span>
+                    <span class="text-orange-500">Quem</span> Somos
                 </h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-pt="Mais que um restaurante Bar, somos uma experiência autenticamente moçambicana" data-en="More than a Beach Bar, we are an authentically Mozambican experience">
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Mais que um restaurante Bar, somos uma experiência autenticamente moçambicana
                 </p>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20 mobile-grid-2">
-                <div class="bg-white rounded-3xl shadow-2xl p-8">
+                <div class= "bg-white rounded-3xl shadow-2xl p-8">
                     <div class="text-center mb-8">
                         <div class="text-6xl mb-4" style="display: flex !important; justify-content: center; align-items: center;">
                             <img src="pintos images/pintos 5b.png" style="max-width: 500px;" alt="Nossa Paixão">
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-800 mb-4" data-pt="Nossa Paixão" data-en="Our Passion">Nossa Paixão</h3>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Nossa Paixão</h3>
                     </div>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6" data-pt="Nascemos do amor pela rica gastronomia moçambicana e pela beleza natural das nossas costas. O Pintos Beach Bar é o resultado de uma paixão familiar que começou há mais de 15 anos, quando decidimos compartilhar os sabores únicos da nossa terra com o mundo." data-en="We were born from a love for rich Mozambican gastronomy and the natural beauty of our coasts. Pintos Beach Bar is the result of a family passion that began over 15 years ago, when we decided to share the unique flavors of our land with the world.">
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
                         Nascemos do amor pela rica gastronomia moçambicana e pela beleza natural das nossas costas. 
                         O <strong>Pintos Beach Bar</strong> é o resultado de uma paixão familiar que começou há mais de 15 anos, 
                         quando decidimos compartilhar os sabores únicos da nossa terra com o mundo.
@@ -422,9 +375,9 @@
                         <div class="text-6xl mb-4" style="display: flex; justify-content: center; align-items: center;">
                             <img src="pintos images/pintos nigth view design.png" style="max-width: 500px;" alt="Nossa Missão">
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-800 mb-4" data-pt="Nossa Missão" data-en="Our Mission">Nossa Missão</h3>
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Nossa Missão</h3>
                     </div>
-                    <p class="text-gray-600 text-lg leading-relaxed mb-6" data-pt="Promover a culinária moçambicana autêntica, utilizando ingredientes locais frescos e técnicas tradicionais passadas de geração em geração. Queremos que cada cliente sinta o calor da hospitalidade africana e prove o melhor dos nossos mares e terras." data-en="To promote authentic Mozambican cuisine, using fresh local ingredients and traditional techniques passed down from generation to generation. We want every customer to feel the warmth of African hospitality and taste the best of our seas and lands.">
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
                         Promover a culinária moçambicana autêntica, utilizando ingredientes locais frescos e 
                         técnicas tradicionais passadas de geração em geração. Queremos que cada cliente 
                         sinta o calor da hospitalidade africana e prove o melhor dos nossos mares e terras.
@@ -439,9 +392,9 @@
             <div class="mb-16">
                 <div class="text-center mb-12">
                     <h3 class="text-3xl font-bold text-gray-800 mb-4">
-                        <span class="text-orange-500" data-pt="Nosso" data-en="Our">Nosso</span> <span data-pt="Ambiente" data-en="Atmosphere">Ambiente</span>
+                        <span class="text-orange-500">Nosso</span> Ambiente
                     </h3>
-                    <p class="text-gray-600 text-lg" data-pt="Espaços únicos pensados para momentos inesquecíveis" data-en="Unique spaces designed for unforgettable moments">Espaços únicos pensados para momentos inesquecíveis</p>
+                    <p class="text-gray-600 text-lg">Espaços únicos pensados para momentos inesquecíveis</p>
                 </div>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 ambiente-grid">
@@ -461,19 +414,19 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 stats-mobile">
                 <div class="text-center">
                     <div class="text-4xl md:text-5xl font-bold text-orange-500 mb-2">15+</div>
-                    <p class="text-gray-600 font-medium" data-pt="Anos de Experiência" data-en="Years of Experience">Anos de Experiência</p>
+                    <p class="text-gray-600 font-medium">Anos de Experiência</p>
                 </div>
                 <div class="text-center">
                     <div class="text-4xl md:text-5xl font-bold text-blue-500 mb-2">50+</div>
-                    <p class="text-gray-600 font-medium" data-pt="Pratos Únicos" data-en="Unique Dishes">Pratos Únicos</p>
+                    <p class="text-gray-600 font-medium">Pratos Únicos</p>
                 </div>
                 <div class="text-center">
                     <div class="text-4xl md:text-5xl font-bold text-green-500 mb-2">1000+</div>
-                    <p class="text-gray-600 font-medium" data-pt="Clientes Satisfeitos" data-en="Satisfied Customers">Clientes Satisfeitos</p>
+                    <p class="text-gray-600 font-medium">Clientes Satisfeitos</p>
                 </div>
                 <div class="text-center">
                     <div class="text-4xl md:text-5xl font-bold text-red-500 mb-2">100%</div>
-                    <p class="text-gray-600 font-medium" data-pt="Ingredientes Locais" data-en="Local Ingredients">Ingredientes Locais</p>
+                    <p class="text-gray-600 font-medium">Ingredientes Locais</p>
                 </div>
             </div>
         </div>
@@ -484,10 +437,10 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                    <span class="text-orange-500" data-pt="Experiência" data-en="Experience">Experiência</span> <span data-pt="Gastronômica" data-en="Gastronomic">Gastronômica</span>
+                    <span class="text-orange-500">Experiência</span> Gastronômica
                 </h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto" data-pt="Do prato à mesa, cada detalhe é pensado para criar memórias únicas" data-en="From plate to table, every detail is designed to create unique memories">
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
                     Do prato à mesa, cada detalhe é pensado para criar memórias únicas
                 </p>
             </div>
@@ -510,8 +463,8 @@
             </div>
             
             <div class="card-hover bg-white rounded-3xl shadow-2xl p-8 text-center">
-                <h3 class="text-3xl font-bold text-gray-800 mb-6" data-pt="Do Mar à Sua Mesa" data-en="From Sea to Your Table">Do Mar à Sua Mesa</h3>
-                <p class="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto mb-6" data-pt="Todos os nossos pratos são preparados com ingredientes frescos, obtidos diariamente dos pescadores locais e produtores da região. Nossa cozinha combina técnicas tradicionais moçambicanas com toques contemporâneos, criando uma experiência gastronômica única que celebra os sabores autênticos do Índico." data-en="All our dishes are prepared with fresh ingredients, obtained daily from local fishermen and regional producers. Our kitchen combines traditional Mozambican techniques with contemporary touches, creating a unique gastronomic experience that celebrates the authentic flavors of the Indian Ocean.">
+                <h3 class="text-3xl font-bold text-gray-800 mb-6">Do Mar à Sua Mesa</h3>
+                <p class="text-gray-600 text-lg leading-relaxed max-w-4xl mx-auto mb-6">
                     Todos os nossos pratos são preparados com ingredientes frescos, obtidos diariamente dos 
                     pescadores locais e produtores da região. Nossa cozinha combina técnicas tradicionais 
                     moçambicanas com toques contemporâneos, criando uma experiência gastronômica única que 
@@ -533,7 +486,7 @@
         <div class="container mx-auto px-4">
             <div class="text-center mb-16">
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-                    <span data-pt="Venha nos" data-en="Come">Venha nos</span> <span class="text-orange-500" data-pt="Visitar" data-en="Visit Us">Visitar</span>
+                    Venha nos <span class="text-orange-500">Visitar</span>
                 </h2>
                 <div class="w-24 h-1 bg-orange-500 mx-auto mb-6"></div>
             </div>
@@ -542,7 +495,7 @@
                 <div class="card-hover bg-white rounded-3xl shadow-2xl p-8">
                     <h3 class="text-3xl font-bold text-gray-800 mb-6">
                         <i class="fas fa-map-marker-alt text-orange-500 mr-3"></i>
-                        <span data-pt="Nossa Localização" data-en="Our Location">Nossa Localização</span>
+                        Nossa Localização
                     </h3>
                     <div class="space-y-4 mb-8">
                         <div class="flex items-center">
@@ -566,15 +519,15 @@
                     <div class="border-t pt-6">
                         <h4 class="text-xl font-bold text-gray-800 mb-4">
                             <i class="fas fa-clock text-orange-500 mr-2"></i>
-                            <span data-pt="Horário de Funcionamento" data-en="Opening Hours">Horário de Funcionamento</span>
+                            Horário de Funcionamento
                         </h4>
                         <div class="space-y-2 text-gray-600">
                             <div class="flex justify-between">
-                                <span data-pt="Segunda - Quinta:" data-en="Monday - Thursday:">Segunda - Quinta:</span>
+                                <span>Segunda - Quinta:</span>
                                 <span class="font-semibold">00:00 - 23:00</span>
                             </div>
                             <div class="flex justify-between">
-                                <span data-pt="Sexta - Domingo:" data-en="Friday - Sunday:">Sexta - Domingo:</span>
+                                <span>Sexta - Domingo:</span>
                                 <span class="font-semibold">00:00 - 24:00</span>
                             </div>
                         </div>
@@ -582,11 +535,11 @@
                 </div>
                 
                 <div class="card-hover bg-white rounded-3xl shadow-2xl p-8">
-                    <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center" data-pt="Vista do Nosso Paraíso" data-en="View of Our Paradise">
+                    <h3 class="text-3xl font-bold text-gray-800 mb-6 text-center">
                         Vista do Nosso Paraíso
                     </h3>                   
                     <img src="pintos images/Copilot_20250930_141826.png" alt="pintos view" class="rounded-2xl mb-6 w-full h-80 object-cover">
-                    <p class="text-gray-600 text-center mt-6 italic" data-pt="Desfrute de uma vista deslumbrante do oceano Índico enquanto saboreia o melhor da culinária moçambicana" data-en="Enjoy a stunning view of the Indian Ocean while savoring the best of Mozambican cuisine">
+                    <p class="text-gray-600 text-center mt-6 italic">
                         "Desfrute de uma vista deslumbrante do oceano Índico 
                         enquanto saboreia o melhor da culinária moçambicana"
                     </p>
@@ -598,16 +551,16 @@
     <!-- Call to Action Final -->
     <section class="py-20 bg-gradient-to-r from-white-500 to-red-500 text-black text-center">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6" data-pt="Pronto para uma Experiência Inesquecível?" data-en="Ready for an Unforgettable Experience?">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">
                 Pronto para uma Experiência Inesquecível?
             </h2>
-            <p class="text-xl md:text-2xl text-orange-500 mb-8 max-w-3xl mx-auto opacity-90" data-pt="Venha descobrir por que somos o destino favorito para quem busca sabores autênticos e momentos especiais à beira-mar" data-en="Come discover why we are the favorite destination for those seeking authentic flavors and special seaside moments">
+            <p class="text-xl md:text-2xl text-orange-500 mb-8 max-w-3xl mx-auto opacity-90">
                 Venha descobrir por que somos o destino favorito para quem busca 
                 sabores autênticos e momentos especiais à beira-mar
             </p>
             <button onclick="goToMenu()" class="bg-orange-500 text-white font-bold py-6 px-12 rounded-full text-xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                 <i class="fas fa-utensils mr-3"></i>
-                <span data-pt="Explorar Nosso Cardápio Agora" data-en="Explore Our Menu Now">Explorar Nosso Cardápio Agora</span>
+                Explorar Nosso Cardápio Agora
                 <i class="fas fa-arrow-right ml-3"></i>
             </button>
         </div>
@@ -621,14 +574,14 @@
                     <h3 class="text-2xl font-bold mb-4" style="font-family: 'Pacifico', cursive;">
                         Pintos Beach Bar
                     </h3>
-                    <p class="text-gray-400" data-pt="O sabor autêntico de Moçambique em cada prato, com a hospitalidade calorosa que nos define." data-en="The authentic flavor of Mozambique in every dish, with the warm hospitality that defines us.">
+                    <p class="text-gray-400">
                         O sabor autêntico de Moçambique em cada prato, 
                         com a hospitalidade calorosa que nos define.
                     </p>
                 </div>
                 
                 <div class="text-center">
-                    <h4 class="text-lg font-semibold mb-4" data-pt="Redes Sociais" data-en="Social Media">Redes Sociais</h4>
+                    <h4 class="text-lg font-semibold mb-4">Redes Sociais</h4>
                     <div class="flex justify-center space-x-6 text-2xl">
                         <a href="#" class="text-blue-400 hover:text-blue-300 transition-colors">
                             <i class="fab fa-facebook"></i>
@@ -643,7 +596,7 @@
                 </div>
                 
                 <div class="text-center md:text-right">
-                    <h4 class="text-lg font-semibold mb-4" data-pt="Contato" data-en="Contact">Contato</h4>
+                    <h4 class="text-lg font-semibold mb-4">Contato</h4>
                     <p class="text-gray-400 mb-2">
                         <i class="fas fa-phone mr-2"></i>
                         +258 860 000 000
@@ -656,7 +609,7 @@
             </div>
             
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p data-pt="© 2025 Pintos Beach Bar. Todos os direitos reservados. 🇲🇿" data-en="© 2025 Pintos Beach Bar. All rights reserved. 🇲🇿">&copy; 2025 Pintos Beach Bar. Todos os direitos reservados. 🇲🇿</p>
+                <p>&copy; 2025 Pintos Beach Bar. Todos os direitos reservados. 🇲🇿</p>
                 <p class="mt-2 text-sm">
                     powered by zeinadine
                 </p>
@@ -665,32 +618,6 @@
     </footer>
 
     <script>
-        // Variável para controlar o idioma atual
-        let currentLanguage = 'pt';
-
-        // Função para trocar idioma
-        function toggleLanguage() {
-            currentLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
-            
-            // Atualizar o texto do botão
-            document.getElementById('lang-text').textContent = currentLanguage === 'pt' ? 'EN' : 'PT';
-            
-            // Selecionar todos os elementos com atributos de tradução
-            const elements = document.querySelectorAll('[data-pt][data-en]');
-            
-            elements.forEach(element => {
-                const ptText = element.getAttribute('data-pt');
-                const enText = element.getAttribute('data-en');
-                
-                // Atualizar o texto do elemento
-                if (currentLanguage === 'pt') {
-                    element.textContent = ptText;
-                } else {
-                    element.textContent = enText;
-                }
-            });
-        }
-
         // Função para scroll suave
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({
@@ -700,17 +627,9 @@
 
         // Função para ir ao cardápio
         function goToMenu() {
-            const message = currentLanguage === 'pt' 
-                ? 'Deseja ir para o cardápio digital do Pintos Beach Bar?' 
-                : 'Would you like to go to the Pintos Beach Bar digital menu?';
-            
-            const redirectMessage = currentLanguage === 'pt'
-                ? 'Redirecionando para o cardápio... (Implemente a navegação aqui)'
-                : 'Redirecting to menu... (Implement navigation here)';
-            
-            if (confirm(message)) {
-                // window.location.href = 'cardapio.html';
-                alert(redirectMessage);
+            if (confirm('Deseja ir para o cardápio digital do Pintos Beach Bar?')) {
+                // window.location.href = 'cardapio.html'; // Link para a página do cardápio
+                alert('Redirecionando para o cardápio... (Implemente a navegação aqui)');
             }
         }
 
